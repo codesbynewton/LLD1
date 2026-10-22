@@ -1,8 +1,6 @@
 package org.example.lld1.inventorymanagementsystem;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Client {
     public static void main(String[] args) {
@@ -23,6 +21,35 @@ public class Client {
         Inventory<Book> bookInventory = new Inventory<>();
         bookInventory.addItem(new Book("1", "Harry Potter", 350, 3, "JK Rowling"));
         bookInventory.addItem(new Book("2", " Intelligent Investor", 400, 7, "B Graham"));
+
+
+
+        OrderQueue orderQueue = new OrderQueue();
+
+        orderQueue.addOrder(new Order("ORD-101", false));
+        orderQueue.addOrder(new Order("ORD-102", true));
+        orderQueue.addOrder(new Order("ORD-103", false));
+        orderQueue.addOrder(new Order("ORD-104", true));
+
+        Order order;
+
+        while ((order = orderQueue.processOrder()) != null) {
+            System.out.println(order);
+        }
+
+
+        // Testing for ItemWishList
+
+        Item item1 = new Item("1", "Bat", 3000, 5);
+        Item item2 = new Item("1", "Bat", 3000, 5);
+
+        ItemWishList wishList = new ItemWishList();
+
+        wishList.addToWishList(item1);
+        wishList.addToWishList(item1);
+        wishList.addToWishList(item2);
+
+        System.out.println(wishList.getWishList().size());
 
     }
 }
