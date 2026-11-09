@@ -1,5 +1,17 @@
 package dsa;
 
+/*
+Problem Description
+
+Given N non-negative integers A[0], A[1], ..., A[N-1] ,
+where each represents a point at coordinate (i, A[i]).
+
+N vertical lines are drawn such that the two endpoints of line i is at (i, A[i]) and (i, 0).
+
+Find two lines, which together with x-axis forms a container,
+such that the container contains the most water. You need to return this maximum area.
+ */
+
 public class ContainerWithMostWater {
 
 
